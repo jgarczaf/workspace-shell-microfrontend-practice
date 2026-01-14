@@ -5,7 +5,7 @@ const share = mf.share;
 
 const sharedMappings = new mf.SharedMappings();
 sharedMappings.register(path.join(__dirname, "../../tsconfig.json"), [
-  /* mapped paths to share */
+  "shared",
 ]);
 
 module.exports = {
@@ -33,7 +33,9 @@ module.exports = {
         "./RemoteTransactionsModule":
           "./projects/remote-transactions/src/app/transactions.component.module.ts",
       },
-
+      remotes: {
+        shell: "shell@http://localhost:4200/remoteEntry.js",
+      },
       shared: share({
         "@angular/core": {
           singleton: true,

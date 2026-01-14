@@ -1,1 +1,8 @@
-<router-outlet></router-outlet>
+<header class="saldo-header">
+  <p>Usuario: ****</p>
+  <p>Saldo: {{ saldo | number : "1.2-2" }} €</p>
+</header>
+
+<main>
+  <router-outlet></router-outlet>
+</main>

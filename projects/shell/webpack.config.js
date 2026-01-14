@@ -5,7 +5,7 @@ const share = mf.share;
 
 const sharedMappings = new mf.SharedMappings();
 sharedMappings.register(path.join(__dirname, "../../tsconfig.json"), [
-  /* mapped paths to share */
+  "shared",
 ]);
 
 module.exports = {
@@ -26,11 +26,11 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
+      name: "shell",
       library: { type: "module" },
       remotes: {
         remoteTransactions: "http://localhost:4201/remoteEntry.js",
       },
-
       shared: share({
         "@angular/core": {
           singleton: true,
@@ -52,7 +52,6 @@ module.exports = {
           strictVersion: true,
           requiredVersion: "auto",
         },
-
         ...sharedMappings.getDescriptors(),
       }),
     }),
