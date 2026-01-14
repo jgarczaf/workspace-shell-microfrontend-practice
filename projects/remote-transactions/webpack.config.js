@@ -31,7 +31,6 @@ module.exports = {
       filename: "remoteEntry.js",
       exposes: {
         "./RemoteTransactionsModule":
-          // "./projects/remote-transactions/src/app/transactions.component.routing.module.ts",
           "./projects/remote-transactions/src/app/transactions.component.module.ts",
       },
 

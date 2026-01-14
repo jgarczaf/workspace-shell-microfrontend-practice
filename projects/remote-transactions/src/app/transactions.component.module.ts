@@ -6,18 +6,16 @@ import { TransactionsRoutingModule } from './transactions.component.routing.modu
 import { TransactionsComponent } from './transactions.component';
 import { TransactionsListComponent } from './components/transactions-list/transactions-list.component';
 import { TransactionDetailComponent } from './components/transaction-detail/transaction-detail.component';
+import { TransactionsErrorComponent } from './components/transactions-error/transactions-error.component';
 
 @NgModule({
   declarations: [
     TransactionsComponent,
     TransactionsListComponent,
-    TransactionDetailComponent
+    TransactionDetailComponent,
+    TransactionsErrorComponent,
   ],
-  imports: [
-    CommonModule,
-    RouterModule,
-    TransactionsRoutingModule
-  ],
-  providers: []
+  imports: [CommonModule, RouterModule, TransactionsRoutingModule],
+  providers: [],
 })
 export class TransactionsComponentModule {}

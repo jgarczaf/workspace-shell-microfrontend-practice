@@ -1,8 +1,12 @@
 import { loadRemoteModule } from '@angular-architects/module-federation';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './components/home/home.component';
+import { GlobalErrorComponent } from './components/global-error/global-error.component';
 
 const SHELL_ROUTES: Routes = [
+  { path: '', component: HomeComponent, pathMatch: 'full' },
+
   {
     path: 'transactions',
     loadChildren: () =>
@@ -12,15 +16,8 @@ const SHELL_ROUTES: Routes = [
         exposedModule: './RemoteTransactionsModule',
       }).then((m) => m.TransactionsComponentModule),
   },
-  {
-    path: '',
-    redirectTo: '/transactions',
-    pathMatch: 'full',
-  },
-  {
-    path: '**',
-    redirectTo: '/transactions',
-  },
+
+  { path: '**', component: GlobalErrorComponent },
 ];
 
 @NgModule({
