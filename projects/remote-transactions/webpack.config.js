@@ -4,9 +4,7 @@ const path = require("path");
 const share = mf.share;
 
 const sharedMappings = new mf.SharedMappings();
-sharedMappings.register(path.join(__dirname, "../../tsconfig.json"), [
-  "shared",
-]);
+sharedMappings.register(path.join(__dirname, "../../tsconfig.json"), []);
 
 module.exports = {
   output: {
@@ -57,7 +55,10 @@ module.exports = {
           strictVersion: true,
           requiredVersion: "auto",
         },
-
+        "shared-auth-lib": {
+          singleton: true,
+          strictVersion: true,
+        },
         ...sharedMappings.getDescriptors(),
       }),
     }),
