@@ -1,2 +1,14 @@
-<p>COMPONENTE TRANSACTION DETAIL</p>
-<button (click)="confirmarTransferencia()">Confirmar transferencia</button>
+<mat-card class="detail-card">
+  <mat-card-title>Detalle de la operación</mat-card-title>
+
+  <mat-card-content>
+    <p><strong>Concepto:</strong> Transferencia</p>
+    <p><strong>Importe:</strong> -100 €</p>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-raised-button color="accent" (click)="confirmarTransferencia()">
+      Confirmar transferencia
+    </button>
+  </mat-card-actions>
+</mat-card>

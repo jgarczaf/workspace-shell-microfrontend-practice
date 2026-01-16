@@ -1,6 +1,22 @@
-<h3>BIENVENIDO A TRANSACTIONS COMPONENT</h3>
-<ul>
-  <li><a routerLink="list"> Ir a transactions list component </a></li>
-  <li><a routerLink="detail">Ir a transactions detail component</a></li>
-</ul>
 <router-outlet></router-outlet>
+
+<!-- Footer de navegación inteligente -->
+<div class="nav-footer">
+  <button
+    mat-stroked-button
+    color="primary"
+    *ngIf="isListPage"
+    [routerLink]="['detail']"
+  >
+    Ver detalle
+  </button>
+
+  <button
+    mat-stroked-button
+    color="primary"
+    *ngIf="isDetailPage"
+    [routerLink]="['list']"
+  >
+    Volver al listado
+  </button>
+</div>

@@ -1,8 +1,18 @@
-<header class="saldo-header">
-  <p>Usuario: ****</p>
-  <p>Saldo: {{ saldo | number : "1.2-2" }} €</p>
-</header>
+<mat-toolbar color="primary" class="main-toolbar">
+  <span class="app-title">Banca Digital</span>
 
-<main>
+  <span class="spacer"></span>
+
+  <div class="user-info">
+    <mat-icon>account_circle</mat-icon>
+    <span class="username">Jane Doe</span>
+
+    <mat-chip color="accent" selected class="saldo-chip">
+      Saldo: {{ saldo | number : "1.2-2" }} €
+    </mat-chip>
+  </div>
+</mat-toolbar>
+
+<main class="main-content">
   <router-outlet></router-outlet>
 </main>
